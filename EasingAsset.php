@@ -11,7 +11,7 @@ class EasingAsset extends AssetBundle
     public $basePath = '@webroot/assets';
     
     public $js = [
-        'js/jquery.easing.js'
+        'js/jquery.easing.min.js'
     ];
     
     public $depends = [

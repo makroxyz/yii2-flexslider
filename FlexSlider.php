@@ -91,10 +91,6 @@ class FlexSlider extends Widget
             }
         }
         
-        if (!isset($this->pluginOptions['selector'])) {
-            $this->pluginOptions['selector'] = '.slides > li';
-        }
-
         $options = Json::encode($this->pluginOptions);
         
         $js = <<<JS
