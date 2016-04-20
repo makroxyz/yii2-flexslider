@@ -15,7 +15,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
-        "bower-asset/flexslider" : "*"
+        "bower-asset/flexslider" : "*",
+        "bower-asset/jquery.easing": "*"
     },
     "autoload": {
         "psr-4": {

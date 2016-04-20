@@ -22,7 +22,7 @@ class FlexSliderAsset extends AssetBundle
 
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'bupy7\flexslider\EasingAsset',
     ];
 
 }

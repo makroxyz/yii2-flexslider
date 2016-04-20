@@ -70,11 +70,12 @@ class FlexSlider extends Widget
         
         FlexSliderAsset::register($this->view);
 
-        $this->options = array_merge(['id' => $this->id], $this->options);
+        if (!isset($this->options['id'])) {
+            $this->options['id'] = $this->getId();
+        }
 
-        $this->slidesOptions = array_merge([
-            'class' => 'slides',
-        ], $this->slidesOptions);
+        Html::addCssClass($this->slidesOptions, 'slides');
+        Html::addCssClass($this->options, 'flexslider');
         
         // Encoding expression callback API.
         foreach ([
@@ -89,10 +90,12 @@ class FlexSlider extends Widget
                 $this->pluginOptions[$callback] = new JsExpression($this->pluginOptions[$callback]);
             }
         }
+        
+        if (!isset($this->pluginOptions['selector'])) {
+            $this->pluginOptions['selector'] = '.slides > li';
+        }
 
-        $options = Json::encode(array_merge([
-            'selector' => '.slides > li',
-        ], $this->pluginOptions));
+        $options = Json::encode($this->pluginOptions);
         
         $js = <<<JS
 $('#{$this->id}').flexslider($options);             
